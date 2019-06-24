@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 //
-// viewModelを@Stateとして保持することでNavigation単位で生存させ、onReceiveで更新を受け取る
+// viewModelを@Stateとして保持することでNavigation単位で生存させられる
 //
 private struct ObjectBindingBasicFix : View {
     @State var viewModel = CountViewModel()
@@ -21,9 +21,6 @@ private struct ObjectBindingBasicFix : View {
             Button(action: {
                 self.viewModel.inc()
             }) { Text("inc") }
-        }
-            .onReceive(viewModel.didChange) { viewModel in
-                self.viewModel = viewModel
         }
     }
 }

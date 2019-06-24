@@ -31,6 +31,9 @@ struct RootView : View {
                     NavigationButton(destination: StateEnum()) {
                         Text("StateEnum")
                     }
+                    NavigationButton(destination: StateBindableObject()) {
+                        Text("StateBindableObject")
+                    }
                     NavigationButton(destination: BindingBasic()) {
                         Text("BindingBasic")
                     }
@@ -40,11 +43,11 @@ struct RootView : View {
                     NavigationButton(destination: ObjectBindingBasic()) {
                         Text("ObjectBindingBasic")
                     }
+                }
+                Section {
                     NavigationButton(destination: ObjectBindingRebuild()) {
                         Text("ObjectBindingRebuild")
                     }
-                }
-                Section {
                     NavigationButton(destination: ObjectBindingRebuildFix()) {
                         Text("ObjectBindingRebuildFix")
                     }

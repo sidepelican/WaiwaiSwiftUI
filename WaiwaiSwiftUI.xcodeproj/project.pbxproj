@@ -28,6 +28,7 @@
 		374ECF8222BE772F0055BF0C /* EnvironmentObjectPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374ECF8122BE772F0055BF0C /* EnvironmentObjectPush.swift */; };
 		374ECF8622BE79C30055BF0C /* EnvironmentBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374ECF8522BE79C30055BF0C /* EnvironmentBasic.swift */; };
 		374ECF8822BE7E250055BF0C /* EnvironmentPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374ECF8722BE7E250055BF0C /* EnvironmentPush.swift */; };
+		37A334B122C115A800D25850 /* StateBindableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A334B022C115A800D25850 /* StateBindableObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		374ECF8122BE772F0055BF0C /* EnvironmentObjectPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectPush.swift; sourceTree = "<group>"; };
 		374ECF8522BE79C30055BF0C /* EnvironmentBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentBasic.swift; sourceTree = "<group>"; };
 		374ECF8722BE7E250055BF0C /* EnvironmentPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentPush.swift; sourceTree = "<group>"; };
+		37A334B022C115A800D25850 /* StateBindableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBindableObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				374ECF6C22BE35B70055BF0C /* StateUnusedFix.swift */,
 				374ECF7622BE4BC90055BF0C /* StateClass.swift */,
 				374ECF7822BE4C880055BF0C /* StateEnum.swift */,
+				37A334B022C115A800D25850 /* StateBindableObject.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				374ECF7722BE4BC90055BF0C /* StateClass.swift in Sources */,
+				37A334B122C115A800D25850 /* StateBindableObject.swift in Sources */,
 				374ECF7222BE434E0055BF0C /* BindingSibling.swift in Sources */,
 				374ECF8222BE772F0055BF0C /* EnvironmentObjectPush.swift in Sources */,
 				374ECF8022BE75C60055BF0C /* EnvironmentObjectBasic.swift in Sources */,

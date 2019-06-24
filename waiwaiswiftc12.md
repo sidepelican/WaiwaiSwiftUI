@@ -133,6 +133,7 @@ propertyDelegateで監視されていない値を使って分岐をしてはい�
 # @State
 
 - 中の値がclassのときは値の保持はされるが更新検知はされない
+	- が、 `BindableObject` に適合していれば検知される
 - enumは更新検知される
 
 ---
@@ -204,12 +205,11 @@ struct BindingSibling : View {
 
 # @ObjectBinding
 
-@Stateではclassオブジェクトの更新検知ができなかったが、
-`BindableObject` に適合させて@ObjectBindingを使用することで更新検知できるようになる
+`BindableObject` に適合したオブジェクトは@ObjectBindingを使用することで更新検知できるようになる
 
 ```swift
 public protocol BindableObject : 
-    AnyObject, // ← 注目！
+    AnyObject,
     DynamicViewProperty,
     Identifiable,
     _BindableObjectViewProperty 
@@ -223,6 +223,7 @@ public protocol BindableObject :
 
 ---
 
+### 使用例？
 - それらしい使い方だが、これは罠にはまる
 
 ```swift
@@ -242,9 +243,8 @@ struct ObjectBindingBasic : View {
     var body: some View {
         VStack {
             Text("\(viewModel.count)")
-            Button(action: {
-                self.viewModel.inc()
-            }) { Text("inc") }
+            Button(action: { self.viewModel.inc() })
+                { Text("inc") }
         }
     }
 }
@@ -267,8 +267,8 @@ struct ObjectBindingBasic : View {
 
 ---
 
-#### 回避策
-- viewModelを@Stateとして保持することでNavigation単位で生存させ、onReceiveで更新を受け取る
+#### 値が保持されない問題の回避策？
+- viewModelを@Stateとして保持することでNavigation単位で生存させる
 
 ```swift
 struct ObjectBindingBasicFix : View {
@@ -277,16 +277,22 @@ struct ObjectBindingBasicFix : View {
     var body: some View {
         VStack {
             Text("\(viewModel.count)")
-            Button(action: {
-                self.viewModel.inc()
-            }) { Text("inc") }
-        }
-        .onReceive(viewModel.didChange) { viewModel in
-            self.viewModel = viewModel
+            Button(action: { self.viewModel.inc() })
+            　　{ Text("inc") }
         }
     }
 }
 ```
+
+- このとき型的にいらないと思ってViewModelの `BindableObject` を外さないこと！更新検知が効かなくなる
+
+---
+
+# @ObjectBinding
+
+Q. @Stateを使っても `BindableObject` の更新検知はできるので何に使うのこれ？
+
+- A. delegateValueとDMLのマジックで `$viewState.count` と書くと `Binding<Int>` が取得できるためそこらへんで差別化できる
 
 ---
 
