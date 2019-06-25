@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3725200B22C24FB20038A638 /* LifeTimeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725200A22C24FB20038A638 /* LifeTimeCheck.swift */; };
 		374ECF5022BE2E960055BF0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374ECF4F22BE2E960055BF0C /* AppDelegate.swift */; };
 		374ECF5222BE2E960055BF0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374ECF5122BE2E960055BF0C /* SceneDelegate.swift */; };
 		374ECF5622BE2E970055BF0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374ECF5522BE2E970055BF0C /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3725200A22C24FB20038A638 /* LifeTimeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimeCheck.swift; sourceTree = "<group>"; };
 		374ECF4C22BE2E960055BF0C /* WaiwaiSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaiwaiSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		374ECF4F22BE2E960055BF0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		374ECF5122BE2E960055BF0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				374ECF7322BE4B9B0055BF0C /* ObjectBinding */,
 				374ECF7E22BE75B40055BF0C /* EnvironmentObject */,
 				374ECF8422BE79B40055BF0C /* Environment */,
+				3725200A22C24FB20038A638 /* LifeTimeCheck.swift */,
 				374ECF5522BE2E970055BF0C /* Assets.xcassets */,
 				374ECF5A22BE2E970055BF0C /* LaunchScreen.storyboard */,
 				374ECF5D22BE2E970055BF0C /* Info.plist */,
@@ -241,6 +244,7 @@
 				374ECF8022BE75C60055BF0C /* EnvironmentObjectBasic.swift in Sources */,
 				374ECF6922BE300E0055BF0C /* StateInPresentation.swift in Sources */,
 				374ECF6522BE2ED10055BF0C /* RootView.swift in Sources */,
+				3725200B22C24FB20038A638 /* LifeTimeCheck.swift in Sources */,
 				374ECF8622BE79C30055BF0C /* EnvironmentBasic.swift in Sources */,
 				374ECF7922BE4C880055BF0C /* StateEnum.swift in Sources */,
 				374ECF7522BE4BAC0055BF0C /* ObjectBindingBasic.swift in Sources */,

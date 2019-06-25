@@ -63,12 +63,16 @@ struct RootView : View {
                     NavigationButton(destination: EnvironmentPush()) {
                         Text("EnvironmentPush")
                     }
+                    NavigationButton(destination: LifeTimeCheck()) {
+                        Text("LifeTimeCheck")
+                    }
                     // ↓ 何故かこれは初回しか開けない
                     PresentationButton(destination: Text("Hello")) {
                         Text("PresentationFromRootView")
                     }
                 }
             }
+                .font(.headline)
                 .navigationBarTitle(Text("Sample"))
         }
     }

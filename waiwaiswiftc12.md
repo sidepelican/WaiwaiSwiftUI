@@ -65,7 +65,9 @@ struct StateBasic : View {
 
 - 値は1つのNavigation単位で生存する
   - Backで画面が消えると初期化される
+  - （Viewの構成によっては初期化されないパターンもある）
 - **Presentationされていた場合は画面が消えても値が残る**
+  - （Viewの構成によっては初期化されるパターンもある）
 
 ---
 
@@ -423,6 +425,7 @@ struct CounterPage2: View {
 | @Environment | Navigation・Presentation単位 |
 
 - あくまで現時点。リリースされるころには変わってそう
+- Viewの構成によって変わることがある
 
 ---
 
