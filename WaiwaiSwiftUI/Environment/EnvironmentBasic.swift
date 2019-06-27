@@ -13,13 +13,16 @@ import SwiftUI
 //
 extension EnvironmentValues {
     var counter: CounterEnvironment {
-        get { self[CounterEnvironment.self] }
-        set { self[CounterEnvironment.self] = newValue }
+        get { self[CounterEnvironmentKey.self] }
+        set { self[CounterEnvironmentKey.self] = newValue }
     }
 }
 
-struct CounterEnvironment: EnvironmentKey {
+struct CounterEnvironmentKey: EnvironmentKey {
     static var defaultValue: CounterEnvironment { .init() }
+}
+
+struct CounterEnvironment {
     var count: Int = 0
 }
 

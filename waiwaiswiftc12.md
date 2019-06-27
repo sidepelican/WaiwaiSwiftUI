@@ -270,7 +270,7 @@ struct ObjectBindingBasic : View {
 ---
 
 #### 値が保持されない問題の回避策？
-- viewModelを@Stateとして保持することでNavigation単位で生存させる
+- viewModelを@Stateとして保持することでNavigation単位で生存させられる
 
 ```swift
 struct ObjectBindingBasicFix : View {
@@ -286,7 +286,7 @@ struct ObjectBindingBasicFix : View {
 }
 ```
 
-- このとき型的にいらないと思ってViewModelの `BindableObject` を外さないこと！更新検知が効かなくなる
+- しかし@Stateにclassを保持させること自体は想定されていなさそうなため、おとなしく親Viewが子ViewのviewModelを管理してあげるか後述する＠EnvironmentObjectを利用したほうがよさそう
 
 ---
 
@@ -376,13 +376,16 @@ EnvironmentObjectと似ていてこちらは値型を扱うといったイメー
 ```swift
 extension EnvironmentValues {
     var counter: CounterEnvironment {
-        get { self[CounterEnvironment.self] }
-        set { self[CounterEnvironment.self] = newValue }
+        get { self[CounterEnvironmentKey.self] }
+        set { self[CounterEnvironmentKey.self] =newValue}
     }
 }
 
-struct CounterEnvironment: EnvironmentKey {
+struct CounterEnvironmentKey: EnvironmentKey {
     static var defaultValue: CounterEnvironment {.init()}
+}
+
+struct CounterEnvironment {
     var count: Int = 0
 }
 ```

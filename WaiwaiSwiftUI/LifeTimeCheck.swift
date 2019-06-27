@@ -93,7 +93,6 @@ struct LifeTimeDetailView: View {
             Button(action: { self.rand += 1 }) { Text("refresh\(self.rand)") }
         }
             .padding()
-            .font(.title)
     }
 }
 
@@ -109,7 +108,6 @@ struct LifeTimeCheck : View {
                 Text("presentation")
             }
         }
-            .font(.title)
     }
 }
 
