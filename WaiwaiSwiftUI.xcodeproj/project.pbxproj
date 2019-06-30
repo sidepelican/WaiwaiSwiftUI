@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370F9F1322C7C8CD00980C6D /* BindingInList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370F9F1222C7C8CD00980C6D /* BindingInList.swift */; };
 		3725200B22C24FB20038A638 /* LifeTimeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3725200A22C24FB20038A638 /* LifeTimeCheck.swift */; };
 		374ECF5022BE2E960055BF0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374ECF4F22BE2E960055BF0C /* AppDelegate.swift */; };
 		374ECF5222BE2E960055BF0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374ECF5122BE2E960055BF0C /* SceneDelegate.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370F9F1222C7C8CD00980C6D /* BindingInList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingInList.swift; sourceTree = "<group>"; };
 		3725200A22C24FB20038A638 /* LifeTimeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeTimeCheck.swift; sourceTree = "<group>"; };
 		374ECF4C22BE2E960055BF0C /* WaiwaiSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaiwaiSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		374ECF4F22BE2E960055BF0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				374ECF6F22BE40AD0055BF0C /* BindingBasic.swift */,
 				374ECF7122BE434E0055BF0C /* BindingSibling.swift */,
+				370F9F1222C7C8CD00980C6D /* BindingInList.swift */,
 			);
 			path = Binding;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				374ECF8622BE79C30055BF0C /* EnvironmentBasic.swift in Sources */,
 				374ECF7922BE4C880055BF0C /* StateEnum.swift in Sources */,
 				374ECF7522BE4BAC0055BF0C /* ObjectBindingBasic.swift in Sources */,
+				370F9F1322C7C8CD00980C6D /* BindingInList.swift in Sources */,
 				374ECF7022BE40AD0055BF0C /* BindingBasic.swift in Sources */,
 				374ECF5022BE2E960055BF0C /* AppDelegate.swift in Sources */,
 				374ECF6D22BE35B70055BF0C /* StateUnusedFix.swift in Sources */,

@@ -40,11 +40,14 @@ struct RootView : View {
                     NavigationButton(destination: BindingSibling()) {
                         Text("BindingSibling")
                     }
-                    NavigationButton(destination: ObjectBindingBasic()) {
-                        Text("ObjectBindingBasic")
+                    NavigationButton(destination: BindingInList()) {
+                        Text("BindingInList")
                     }
                 }
                 Section {
+                    NavigationButton(destination: ObjectBindingBasic()) {
+                        Text("ObjectBindingBasic")
+                    }
                     NavigationButton(destination: ObjectBindingRebuild()) {
                         Text("ObjectBindingRebuild")
                     }
