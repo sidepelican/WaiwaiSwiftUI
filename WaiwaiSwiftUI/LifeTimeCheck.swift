@@ -101,10 +101,10 @@ struct LifeTimeCheck : View {
     var body: some View {
         VStack {
             LifeTimeDetailView()
-            NavigationButton(destination: LifeTimeDetailView()) {
+            NavigationLink(destination: LifeTimeDetailView()) {
                 Text("navigation")
             }
-            PresentationButton(destination: LifeTimeDetailView()) {
+            PresentationLink(destination: LifeTimeDetailView()) {
                 Text("presentation")
             }
         }

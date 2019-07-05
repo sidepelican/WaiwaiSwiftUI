@@ -9,11 +9,11 @@
 import SwiftUI
 
 //
-// PresentationButtonから遷移した場合はcountが初期化されない
+// PresentationLinkから遷移した場合はcountが初期化されない
 //
 struct StateInPresentation : View {
     var body: some View {
-        PresentationButton(destination: StateBasic()) {
+        PresentationLink(destination: StateBasic()) {
             Text("present")
         }
     }

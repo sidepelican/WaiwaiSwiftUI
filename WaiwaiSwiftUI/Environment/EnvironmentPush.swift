@@ -14,10 +14,10 @@ import SwiftUI
 struct EnvironmentPush : View {
     var body: some View {
         VStack {
-            NavigationButton(destination: CounterPage2()) {
+            NavigationLink(destination: CounterPage2()) {
                 Text("push")
             }
-            PresentationButton(destination: CounterPage2()) {
+            PresentationLink(destination: CounterPage2()) {
                 Text("present")
             }
                 .environment(\.counter, CounterEnvironment(count: 2))

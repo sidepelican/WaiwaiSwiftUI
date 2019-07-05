@@ -30,7 +30,7 @@ struct BindingInList : View {
     var body: some View {
         VStack {
             Text("selected: \(selected.map(String.init) ?? "nil")")
-            NavigationButton(destination: ListPage(selected: $selected)) {
+            NavigationLink(destination: ListPage(selected: $selected)) {
                 Text("select number")
             }
         }

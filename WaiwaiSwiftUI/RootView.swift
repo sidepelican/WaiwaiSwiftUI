@@ -13,64 +13,64 @@ struct RootView : View {
         NavigationView {
             List {
                 Section {
-                    NavigationButton(destination: StateBasic()) {
+                    NavigationLink(destination: StateBasic()) {
                         Text("StateBasic")
                     }
-                    NavigationButton(destination: StateInPresentation()) {
+                    NavigationLink(destination: StateInPresentation()) {
                         Text("StateInPresentation")
                     }
-                    NavigationButton(destination: StateUnused()) {
+                    NavigationLink(destination: StateUnused()) {
                         Text("StateUnused")
                     }
-                    NavigationButton(destination: StateUnusedFix()) {
+                    NavigationLink(destination: StateUnusedFix()) {
                         Text("StateUnusedFix")
                     }
-                    NavigationButton(destination: StateClass()) {
+                    NavigationLink(destination: StateClass()) {
                         Text("StateClass")
                     }
-                    NavigationButton(destination: StateEnum()) {
+                    NavigationLink(destination: StateEnum()) {
                         Text("StateEnum")
                     }
-                    NavigationButton(destination: StateBindableObject()) {
+                    NavigationLink(destination: StateBindableObject()) {
                         Text("StateBindableObject")
                     }
-                    NavigationButton(destination: BindingBasic()) {
+                    NavigationLink(destination: BindingBasic()) {
                         Text("BindingBasic")
                     }
-                    NavigationButton(destination: BindingSibling()) {
+                    NavigationLink(destination: BindingSibling()) {
                         Text("BindingSibling")
                     }
-                    NavigationButton(destination: BindingInList()) {
+                    NavigationLink(destination: BindingInList()) {
                         Text("BindingInList")
                     }
                 }
                 Section {
-                    NavigationButton(destination: ObjectBindingBasic()) {
+                    NavigationLink(destination: ObjectBindingBasic()) {
                         Text("ObjectBindingBasic")
                     }
-                    NavigationButton(destination: ObjectBindingRebuild()) {
+                    NavigationLink(destination: ObjectBindingRebuild()) {
                         Text("ObjectBindingRebuild")
                     }
-                    NavigationButton(destination: ObjectBindingRebuildFix()) {
+                    NavigationLink(destination: ObjectBindingRebuildFix()) {
                         Text("ObjectBindingRebuildFix")
                     }
-                    NavigationButton(destination: EnvironmentObjectBasic()) {
+                    NavigationLink(destination: EnvironmentObjectBasic()) {
                         Text("EnvironmentObjectBasic")
                     }
-                    NavigationButton(destination: EnvironmentObjectPush()) {
+                    NavigationLink(destination: EnvironmentObjectPush()) {
                         Text("EnvironmentObjectPush")
                     }
-                    NavigationButton(destination: EnvironmentBasic()) {
+                    NavigationLink(destination: EnvironmentBasic()) {
                         Text("EnvironmentBasic")
                     }
-                    NavigationButton(destination: EnvironmentPush()) {
+                    NavigationLink(destination: EnvironmentPush()) {
                         Text("EnvironmentPush")
                     }
-                    NavigationButton(destination: LifeTimeCheck()) {
+                    NavigationLink(destination: LifeTimeCheck()) {
                         Text("LifeTimeCheck")
                     }
                     // ↓ 何故かこれは初回しか開けない
-                    PresentationButton(destination: Text("Hello")) {
+                    PresentationLink(destination: Text("Hello")) {
                         Text("PresentationFromRootView")
                     }
                 }

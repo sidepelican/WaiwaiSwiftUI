@@ -15,10 +15,10 @@ struct EnvironmentObjectPush : View {
     var body: some View {
         VStack {
             // どちらもクラッシュする
-            NavigationButton(destination: CounterPage()) {
+            NavigationLink(destination: CounterPage()) {
                 Text("push")
             }
-            PresentationButton(destination: CounterPage()) {
+            PresentationLink(destination: CounterPage()) {
                 Text("present")
             }
         }
