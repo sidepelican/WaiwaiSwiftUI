@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct RootView : View {
+    @State var showingHello: Bool = false
+
     var body: some View {
         NavigationView {
             List {
@@ -69,11 +71,18 @@ struct RootView : View {
                     NavigationLink(destination: LifeTimeCheck()) {
                         Text("LifeTimeCheck")
                     }
-                    // ↓ 何故かこれは初回しか開けない
-                    PresentationLink(destination: Text("Hello")) {
-                        Text("PresentationFromRootView")
+                    Button("PresentationFromRootView") {
+                        self.showingHello.toggle()
                     }
+                    // ↓ 何故か.sheetをここに記述すると初回しか開けない
+//                    .sheet(isPresented: $showingHello) {
+//                        Text("Hello")
+//                    }
                 }
+            }
+                // ↓ こちらに記述した.sheetは何度でも開いたり閉じたりできる
+            .sheet(isPresented: $showingHello) {
+                Text("Hello")
             }
                 .font(.headline)
                 .navigationBarTitle(Text("Sample"))

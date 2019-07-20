@@ -9,12 +9,17 @@
 import SwiftUI
 
 //
-// PresentationLinkから遷移した場合はcountが初期化されない
+// Presentationから遷移した場合はcountが初期化されない
 //
 struct StateInPresentation : View {
+    @State var showingCounter: Bool = false
+    
     var body: some View {
-        PresentationLink(destination: StateBasic()) {
-            Text("present")
+        Button("present") {
+            self.showingCounter.toggle()
+        }
+        .sheet(isPresented: $showingCounter) {
+            StateBasic()
         }
     }
 }

@@ -12,17 +12,21 @@ import SwiftUI
 // EnvironmentObjectと同様、値は画面をまたぐと初期化されるのでこの方法で指定してもどちらもデフォルト値(count=0)が使用される
 //
 struct EnvironmentPush : View {
+    @State var showingCounter: Bool = false
+
     var body: some View {
         VStack {
             NavigationLink(destination: CounterPage2()) {
                 Text("push")
             }
-            PresentationLink(destination: CounterPage2()) {
-                Text("present")
+            Button("present") {
+                self.showingCounter.toggle()
             }
-                .environment(\.counter, CounterEnvironment(count: 2))
         }
-            .environment(\.counter, CounterEnvironment(count: 1))
+        .sheet(isPresented: $showingCounter) {
+            CounterPage2()
+        }
+        .environment(\.counter, CounterEnvironment(count: 1))
     }
 }
 

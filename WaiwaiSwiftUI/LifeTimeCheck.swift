@@ -97,6 +97,7 @@ struct LifeTimeDetailView: View {
 }
 
 struct LifeTimeCheck : View {
+    @State var showingCounter: Bool = false
 
     var body: some View {
         VStack {
@@ -104,8 +105,11 @@ struct LifeTimeCheck : View {
             NavigationLink(destination: LifeTimeDetailView()) {
                 Text("navigation")
             }
-            PresentationLink(destination: LifeTimeDetailView()) {
-                Text("presentation")
+            Button("presentation") {
+                self.showingCounter.toggle()
+            }
+            .sheet(isPresented: $showingCounter) {
+                LifeTimeDetailView()
             }
         }
     }

@@ -12,17 +12,22 @@ import SwiftUI
 // EnvironmentObjectはNavigation・Presentation単位でリセットされるので注意
 //
 struct EnvironmentObjectPush : View {
+    @State var showingCounter: Bool = false
+
     var body: some View {
         VStack {
             // どちらもクラッシュする
             NavigationLink(destination: CounterPage()) {
-                Text("push")
+                Text("push(crash)")
             }
-            PresentationLink(destination: CounterPage()) {
-                Text("present")
+            Button("present(crash)") {
+                self.showingCounter.toggle()
             }
         }
-            .environmentObject(CounterEnvironmentObject())
+        .sheet(isPresented: $showingCounter) {
+            CounterPage()
+        }
+        .environmentObject(CounterEnvironmentObject())
     }
 }
 
