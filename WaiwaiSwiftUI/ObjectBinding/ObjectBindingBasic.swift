@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 class CountViewModel: BindableObject {
-    let didChange = PassthroughSubject<CountViewModel, Never>()
+    let willChange = PassthroughSubject<CountViewModel, Never>()
     var count: Int = 0
 
     private let uuid = UUID()
@@ -22,8 +22,8 @@ class CountViewModel: BindableObject {
     }
 
     func inc() {
+        willChange.send(self)
         count += 1
-        didChange.send(self)
     }
 }
 

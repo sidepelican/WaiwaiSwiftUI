@@ -14,7 +14,8 @@ private class AccountManager {
 }
 
 //
-// 初回のbody呼び出し時に使用されなかったStateに更新があってもViewは更新されない
+// Beta3まで: 初回のbody呼び出し時に使用されなかったStateに更新があってもViewは更新されない
+// Beta4: 初回のbody呼び出し時に使用されたか関係なく、Stateに更新があったらViewが更新される
 //
 struct StateUnused : View {
     @State var okane: Int = 0

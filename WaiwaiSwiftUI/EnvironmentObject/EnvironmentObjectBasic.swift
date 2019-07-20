@@ -10,12 +10,15 @@ import Combine
 import SwiftUI
 
 class CounterEnvironmentObject: BindableObject {
-    let didChange = PassthroughSubject<CounterEnvironmentObject, Never>()
-    var count: Int = 0
+    let willChange = PassthroughSubject<CounterEnvironmentObject, Never>()
+    var count: Int = 0 {
+        willSet {
+            willChange.send(self)
+        }
+    }
 
     func inc() {
         count += 1
-        didChange.send(self)
     }
 }
 

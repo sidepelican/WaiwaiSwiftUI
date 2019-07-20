@@ -10,11 +10,11 @@ import Combine
 import SwiftUI
 
 private class BindableInt: BindableObject {
-    let didChange = PassthroughSubject<BindableInt, Never>()
+    let willChange = PassthroughSubject<BindableInt, Never>()
 
     var value: Int {
-        didSet {
-            didChange.send(self)
+        willSet {
+            willChange.send(self)
         }
     }
     init(_ v: Int) {

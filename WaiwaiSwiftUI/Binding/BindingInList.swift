@@ -10,11 +10,15 @@ import SwiftUI
 
 private let nums = Array(1...10)
 
+//
+//  Beta3まで: セル選択時に背景色が変化せず、一度画面を戻らないと反映されなかった。@Bindingの更新は親Viewには伝わるが自身には伝わっていなかった
+//  Beta4: 更新が検知されるようになり、セル選択時に色が変化するようになった
+//
 private struct ListPage: View {
     @Binding var selected: Int?
 
     var body: some View {
-        List(nums.identified(by: \.self), selection: $selected, action: { i in
+        List(nums, action: { i in
             self.selected = i
         }) { i in
             Text("\(i)")

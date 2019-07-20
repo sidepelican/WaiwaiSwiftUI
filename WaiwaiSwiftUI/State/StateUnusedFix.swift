@@ -10,11 +10,11 @@ import SwiftUI
 import Combine
 
 private class AccountManager: BindableObject {
-    let didChange = PassthroughSubject<AccountManager, Never>()
+    let willChange = PassthroughSubject<AccountManager, Never>()
     static let shared = AccountManager()
     var isPurchased: Bool = false {
-        didSet {
-            didChange.send(self)
+        willSet {
+            willChange.send(self)
         }
     }
 }

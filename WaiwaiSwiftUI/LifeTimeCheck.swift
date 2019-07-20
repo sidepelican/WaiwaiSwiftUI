@@ -18,10 +18,10 @@ class ClassModel {
 }
 
 class BindableModel: BindableObject {
-    let didChange = PassthroughSubject<BindableModel, Never>()
+    let willChange = PassthroughSubject<BindableModel, Never>()
     var count: Int = 0 {
-        didSet {
-            didChange.send(self)
+        willSet {
+            willChange.send(self)
         }
     }
 }
