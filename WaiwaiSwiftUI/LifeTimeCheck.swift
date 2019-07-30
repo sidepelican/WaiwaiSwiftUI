@@ -17,13 +17,8 @@ class ClassModel {
     var count: Int = 0
 }
 
-class BindableModel: BindableObject {
-    let willChange = PassthroughSubject<BindableModel, Never>()
-    var count: Int = 0 {
-        willSet {
-            willChange.send(self)
-        }
-    }
+class BindableModel: ObservableObject {
+    @Published var count: Int = 0
 }
 
 struct ValueStateView: View {
@@ -69,7 +64,7 @@ struct BindableStateView: View {
 }
 
 struct BindableObjectBindingView: View {
-    @ObjectBinding var bindableObjectBinding: BindableModel = .init()
+    @ObservedObject var bindableObjectBinding: BindableModel = .init()
 
     var body: some View {
         HStack {

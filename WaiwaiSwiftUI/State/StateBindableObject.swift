@@ -9,21 +9,17 @@
 import Combine
 import SwiftUI
 
-private class BindableInt: BindableObject {
-    let willChange = PassthroughSubject<BindableInt, Never>()
+private class BindableInt: ObservableObject {
+    @Published var value: Int
 
-    var value: Int {
-        willSet {
-            willChange.send(self)
-        }
-    }
     init(_ v: Int) {
         value = v
     }
 }
 
 //
-// @Stateにclassをいれても更新検知はされないと思ったけどBindableObjectだったら検知される
+// Beta4まで: @Stateにclassをいれても更新検知はされないと思ったけどBindableObjectだったら検知される
+// Beta5: 中がBindableObjectの場合でも更新検知されない、ObservableObjectでもされない
 //
 struct StateBindableObject : View {
     @State private var count: BindableInt = .init(0)

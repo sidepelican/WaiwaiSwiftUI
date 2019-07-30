@@ -16,9 +16,14 @@ private class AccountManager {
 //
 // Beta3まで: 初回のbody呼び出し時に使用されなかったStateに更新があってもViewは更新されない
 // Beta4: 初回のbody呼び出し時に使用されたか関係なく、Stateに更新があったらViewが更新される
+// Beta5: Beta3までと同じ仕様に戻った
 //
 struct StateUnused : View {
     @State var okane: Int = 0
+
+    init() {
+        AccountManager.shared.isPurchased = false
+    }
 
     var body: some View {
         VStack {

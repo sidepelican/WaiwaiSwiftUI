@@ -9,21 +9,16 @@
 import SwiftUI
 import Combine
 
-private class AccountManager: BindableObject {
-    let willChange = PassthroughSubject<AccountManager, Never>()
+private class AccountManager: ObservableObject {
     static let shared = AccountManager()
-    var isPurchased: Bool = false {
-        willSet {
-            willChange.send(self)
-        }
-    }
+    @Published var isPurchased: Bool = false
 }
 
 //
 // 何らかの方法でViewに更新が検知できるようにしてあげる必要がある
 //
 struct StateUnusedFix : View {
-    @ObjectBinding private var accountManager: AccountManager = .shared
+    @ObservedObject private var accountManager: AccountManager = .shared
     @State var okane: Int = 0
 
     var body: some View {

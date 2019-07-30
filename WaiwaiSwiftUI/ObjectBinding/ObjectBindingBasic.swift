@@ -9,9 +9,8 @@
 import Combine
 import SwiftUI
 
-class CountViewModel: BindableObject {
-    let willChange = PassthroughSubject<CountViewModel, Never>()
-    var count: Int = 0
+class CountViewModel: ObservableObject {
+    @Published var count: Int = 0
 
     private let uuid = UUID()
     init() {
@@ -22,16 +21,16 @@ class CountViewModel: BindableObject {
     }
 
     func inc() {
-        willChange.send(self)
         count += 1
     }
 }
 
 //
 // @ObjectBindingを利用するとclassオブジェクトの更新も検知できるようになる
+// Beta5:　@ObjectBinding → @ObservedObject に変更
 //
 struct ObjectBindingBasic : View {
-    @ObjectBinding var viewModel = CountViewModel()
+    @ObservedObject var viewModel = CountViewModel()
 
     var body: some View {
         VStack {
