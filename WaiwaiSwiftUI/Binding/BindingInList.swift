@@ -8,7 +8,11 @@
 
 import SwiftUI
 
-private let nums = Array(1...10)
+private struct MyData: Identifiable {
+    var id: Int
+}
+
+private let nums = (1...10).map(MyData.init(id:))
 
 //
 //  Beta3まで: セル選択時に背景色が変化せず、一度画面を戻らないと反映されなかった。@Bindingの更新は親Viewには伝わるが自身には伝わっていなかった
@@ -18,18 +22,20 @@ private struct ListPage: View {
     @Binding var selected: Int?
 
     var body: some View {
-        List(nums, action: { i in
-            self.selected = i
-        }) { i in
-            Text("\(i)")
-                .background(self.selected == i ? Color.red : Color.clear)
-                .tag(i)
+        List(nums) { i in
+            Button(action: {
+                self.selected = i.id
+            }) {
+                Text("\(i.id)")
+                    .background(self.selected == i.id ? Color.red : Color.clear)
+                    .tag(i.id)
+            }
         }
     }
 }
 
 struct BindingInList : View {
-    @State var selected: Int?
+    @State var selected: Int? = nil
 
     var body: some View {
         VStack {
