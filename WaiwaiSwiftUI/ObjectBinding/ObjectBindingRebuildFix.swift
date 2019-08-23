@@ -10,7 +10,8 @@ import Combine
 import SwiftUI
 
 //
-// viewModelを@Stateとして保持することでNavigation単位で生存させられる
+// Beta5まで: viewModelを@Stateとして保持することでNavigation単位で生存させられる
+// Beta6: @StateではObservableObjectの更新検知はされなくなった。@ObservedObjectを使おう
 //
 private struct ObjectBindingBasicFix : View {
     @State var viewModel = CountViewModel()

@@ -9,8 +9,9 @@
 import SwiftUI
 
 //
-// 親がリビルドされると子の持つ@ObjectBindingは初期化されるが、更新検知対象は初期化前のBindableObjectのまま
-//   → viewModelが更新されても画面が変化しない
+// Beta5まで: 親がリビルドされると子の持つ@ObjectBinding(Beta5以降は@ObservedObject)は初期化されるが、更新検知対象は初期化前のBindableObjectのまま
+//             → viewModelが更新されても画面が変化しない
+// Beta6: 親がリビルドされたら監視される子のObservedObjectも更新されるようになった
 //
 struct ObjectBindingRebuild : View {
     @State var rebuildCount: Int = 0
